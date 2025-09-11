@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+.nav-links h3 {
+  
+  margin: 0 9px;
+  cursor: pointer;
+}
+.nav-links{
+   display:flex;
+}
+
+.search-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px 10px;
+  padding-right: 200px;
+  background-color: aliceblue;
+}
+
+.search-icon {
+  color: #888;
+  margin-right: 8px;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  width: 200px;
+  font-size: 14px;
+}

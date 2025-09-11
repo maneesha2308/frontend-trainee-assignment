@@ -1,0 +1,47 @@
+.widget-card {
+
+  border-radius: 20px;
+  padding: 5px;
+  padding-top: 2px;
+  box-shadow: 0px 0px 10px 20px lightgray;
+  border: 1px solid #ddd;
+  width: 380px;
+  height: 25vh;
+  display: flex;
+  background-color: white;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 2px;
+}
+
+.remove-btn {
+  background: red;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+
+.addwidget {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: start;
+  padding: 10px;
+  position: relative;
+}
+
+.widget-text{
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
