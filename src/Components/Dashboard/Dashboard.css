@@ -5,6 +5,7 @@
     padding: 20px 50px;
     margin: auto;
     justify-content: center;
+    /* flex:1; */
 
 }
 .top {
@@ -47,8 +48,9 @@
 .cards-container{
     display: grid;
     grid-template-columns: auto auto auto ;
-    gap: 8px;
+    gap: 1rem;
     align-items: start;
+    margin:0 auto;
 }
 .cards{
     width: 380px;
@@ -183,6 +185,7 @@
 
 .risk-bar {
   margin-top: 50px;
+  padding-right: 20px;
 }
 
 .bar {

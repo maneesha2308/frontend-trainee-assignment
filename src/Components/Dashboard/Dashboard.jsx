@@ -125,16 +125,17 @@ const Dashboard = ({ searchTerm }) => {
       <div className='cards-container'>
         <div className='cards'><h5 >Top 5 Namespace Specific Alerts</h5>
           <div className='barchart'>
-            <p style={{ marginTop: '80px', marginRight: '80px' }}>No Graph data available</p>
+            <div style={{paddingTop:'60px'}}><MdBarChart /></div>
+            <p style={{paddingRight:'50px' }}>No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5>Weekload Alerts</h5>
           <div className='barchart'>
-            <div>
+            <div style={{paddingTop:'60px'}}>
               <MdBarChart />
 
             </div>
-            <p style={{ marginTop: '80px', marginRight: '80px' }}>No Graph data available</p>
+            <p style={{ paddingRight :'50px' }}>No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
