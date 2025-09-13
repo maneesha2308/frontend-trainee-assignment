@@ -31,19 +31,7 @@ const Navbar = ({searchTerm,setSearchTerm}) => {
       <FaRegBell/>
 
       </div>
-
-
-   
-
-
-
-
-       
-
-
-
-
-    </div>
+ </div>
   );
 };
 
