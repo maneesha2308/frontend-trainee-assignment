@@ -117,7 +117,9 @@ const Dashboard = ({ searchTerm }) => {
 
           </div>
         </div>
-        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
+        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}
+          style={{margin:'auto',marginTop:'50px'}}
+          >
           + Add Widget</button></h5></div>
       </div>
       <h4>CWPP Dashboard</h4>
@@ -134,7 +136,10 @@ const Dashboard = ({ searchTerm }) => {
             <p >No Graph data available</p>
           </div>
         </div>
-        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
+        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}
+          style={{margin:'auto',marginTop:'50px'}}
+          
+          >
           + Add Widget</button></h5></div>
       </div>
       <h4>Registry Scan</h4>
@@ -177,7 +182,10 @@ const Dashboard = ({ searchTerm }) => {
             </div>
           </div>
         </div>
-        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
+        <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}
+          style={{margin:'auto',marginTop:'50px'}}
+          
+          >
           + Add Widget</button></h5>
         </div>
       </div>

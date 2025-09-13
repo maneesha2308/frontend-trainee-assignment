@@ -1,11 +1,13 @@
 .navbar {
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
   background-color: #f8f9fa;
   box-sizing: border-box;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .nav-links h3 {
@@ -41,17 +43,7 @@
   width: 200px;
   font-size: 14px;
 }
-
-
-
-
-
-
-
-
-
-/* ---------- Tablets (≤ 1024px) ---------- */
-@media (max-width: 1024px) {
+@media (max-width:1024px){
   .navbar {
     flex-wrap: wrap;
     gap: 10px;
@@ -66,7 +58,6 @@
   }
 }
 
-/* ---------- Mobiles (≤ 768px) ---------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -89,7 +80,6 @@
   }
 }
 
-/* ---------- Small phones (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .nav-links h3 {
     font-size: 14px;

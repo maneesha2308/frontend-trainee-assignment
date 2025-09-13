@@ -1,8 +1,6 @@
 
 .dashboard-container{
-    width: 100%;
-   /* max-width: 1200px; */
-
+    width: 95%;
     min-height: 100vh;
     display:flex;
     flex-direction: column;
@@ -58,18 +56,18 @@ button:hover {
 .cards-container{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     box-sizing: border-box;
-    gap: 30px;
-    padding: 20px;
+    gap: 10px;
+    padding: 15px;
     background-color: aliceblue;
 } 
  .cards{
-    /* width: 100%; */
-    width: 380px;
-    max-width: 380px;
+    width: 100%;
+    width: 300px; 
+    height: 28vh;
     max-height: 25vh;
-    height: 25vh;
+    min-height: 25vh;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -140,9 +138,7 @@ button:hover {
 .legend1 {
   display: flex;
   flex-direction: column;
-  margin: 60px 150px ;
-  /* padding: 40px; */
-  /* margin: 70px ; */
+  margin: 50px 150px ;
   font-size: 14px;
   white-space: nowrap;
 
@@ -187,13 +183,11 @@ button:hover {
   background: white;
   border-radius: 50%;
   position: absolute;
-  /* z-index: 1; */
 }
 
 
 .legend2{
-  /* padding: 50px; */
-   margin: 60px 150px;
+  margin: 40px 150px;
   font-size: 14px;
   white-space: nowrap;
 
@@ -219,11 +213,7 @@ button:hover {
 
 
 .risk-bar {
-  /* width: 100%; */
-  /* max-width: 390px; */
   margin-top:0px;
-  /* display: flex; */
-  /* flex-direction: column; */
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -428,6 +418,7 @@ button:hover {
   }
 
   .cards-container {
+    padding: 5px;
     gap: 10px;
   }
 
@@ -440,6 +431,11 @@ button:hover {
 @media (max-width: 768px) {
   .dashboard-container {
     grid-template-columns: 1fr; 
+    padding: 10px;
+    gap:15px;
+  }
+  .cards{
+    padding:10px;
   }
 }
 
@@ -450,6 +446,6 @@ button:hover {
     gap: 10px;
   }
   .cards{
-    padding: 10px;
+    padding: 8px;
   }
 }
