@@ -1,12 +1,13 @@
 .dashboard-container{
+    width: 100%;
+    min-height: 100vh;
     display:flex;
     flex-direction: column;
     background-color:aliceblue;
-    padding: 20px 50px;
-    margin: auto;
     justify-content: center;
-    /* flex:1; */
-
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
 }
 .top {
   display: flex;
@@ -14,17 +15,23 @@
   justify-content: space-between;
   margin-bottom: 20px;      
   border-radius: 8px;
+
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  
 }
 
 .title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight:bold;
+  margin: 0;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 8px; 
+  gap: 10px; 
 }
 .actions>button{
   justify-content: center;
@@ -41,34 +48,44 @@
 }
 
 
-.buttonn:hover {
+button:hover {
   background: #f1f1f1;
 }
 
 .cards-container{
+    width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto ;
-    gap: 1rem;
-    align-items: start;
-    margin:0 auto;
-}
-.cards{
-    width: 380px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+} 
+ .cards{
+    width: 100%;
+    max-width: 380px;
     height: 25vh;
     display: flex;
     background-color: white;
-    padding:5px;
+    padding:5px; 
     padding-top: 2px;
     border-radius:20px ;
     box-shadow: 0px 0px 10px 20px lightgray; 
     border: 1px solid #ddd;
-
+    /* margin: auto; */
+    transition: transform 0.2s;
 }
+.cards:hover {
+  transform: translateY(-4px);
+}
+
+
 
 .cards>h5{
+   white-space: nowrap;
     margin:2px;
 }
-
 .cards>h5>button{
     margin:50px 130px;
     display: flex;
@@ -79,8 +96,6 @@
     border:1px solid gray;
     border-radius: 5px;
 }
-
-
 .donut-chart1 {
   width: 110px;
   height: 110px;
@@ -184,28 +199,34 @@
 }
 
 .risk-bar {
-  margin-top: 50px;
-  padding-right: 20px;
-}
-
-.bar {
+  width: 100%;
+  margin-top: 20px;
   display: flex;
-  height: 14px;
-  border-radius: 7px;
-  overflow: hidden;
-  margin: 10px 0px;
-  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-
+.risk-bar p {
+  margin-bottom: 10px;
+}
+.bar {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+}
+.bar div{
+  height: 100%;
+}
 .brown1{background: #580d0d; height: 100%; width: 5px; }
 .red1{ background: #c62828 ;  height: 100%; width: 40px;}
-.orange1 { background: #ef6c00; flex: 3;  height: 100;width: 150ps; }
-.yellow1 { background: #fbc02d; flex: 2; height: 100%; width: 80px;}
+.orange1 { background: #ef6c00; ;  height: 100%;width: 150px; }
+.yellow1 { background: #fbc02d; ; height: 100%; width: 80px;}
 .grey1 { background: #bdbdbd; height: 100%; width: 10px;}
 
 .legend3{
-  display: flex;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 6px;
 }
 .critical{
   background: #620e0e;
@@ -213,28 +234,30 @@
 .high{
   background: #c62828;
 }
+.medium{
+   background:orange;
+}
+.low{
+  background: yellow;
+}
+.none{
+  background: grey;
+}
+
 
 
 .brown2{background: #580d0d; height: 100%; width: 80px; }
 .red2{ background: #c62828 ;  height: 100%; width: 70px;}
-.orange2 { background: #ef6c00; flex: 3;  height: 100;width: 70px; }
-.yellow2 { background: #fbc02d; flex: 2; height: 100%; width: 20px;}
+.orange2 { background: #ef6c00;   height: 100%;width: 70px; }
+.yellow2 { background: #fbc02d;  height: 100%; width: 20px;}
 .grey2 { background: #bdbdbd; height: 100%; width: 20px;}
 
 .top {
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 20px;
-  align-items: flex-start;
-}
-
 .added-widgets {
   margin: 20px 0;
 }
@@ -285,6 +308,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  align-items: flex-end;
 }
 .panel-actions>button{
   background-color: white;
@@ -297,9 +321,6 @@
   background-color: black;
   color: white;
 }
-
-
-
 .widgets-display {
   display: flex;
   flex-wrap: wrap;
@@ -307,28 +328,26 @@
   gap: 20px;
   margin-top: 20px;
 }
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-  
-
-
-
 .search-results {
   margin-top: 20px;
 }
 
-.cards {
-  margin-bottom: 15px;
+
+
+
+
+
+
+.bar {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  text-align: left;
+  margin: 0 0 10px 0;  /* instead of auto */
 }
-
-
-
-
-
 
 
 

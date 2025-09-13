@@ -1,6 +1,6 @@
 import React from 'react'
 import './Dashboard.css'
-import {useState} from 'react'
+import { useState } from 'react'
 import { FaSyncAlt, FaEllipsisV, FaClock } from 'react-icons/fa';
 import { MdBarChart } from 'react-icons/md';
 import AddWidget from '../Addwidget/AddWidget';
@@ -9,8 +9,8 @@ import { useWidgets } from '../../context/WidgetContext';
 
 const Dashboard = ({ searchTerm }) => {
   const [showWidgetPanel, setShowWidgetPanel] = useState(false);
-  const [selectedWidgets, setSelectedWidgets] = useState([]); 
-  const [activeTab, setActiveTab] = useState("CSPM"); 
+  const [selectedWidgets, setSelectedWidgets] = useState([]);
+  const [activeTab, setActiveTab] = useState("CSPM");
   const [tempTitle, setTempTitle] = useState("");
   const [tempText, setTempText] = useState("");
   const { widgets, addWidget } = useWidgets();
@@ -29,7 +29,7 @@ const Dashboard = ({ searchTerm }) => {
     if (tempTitle.trim() !== "") {
       const newWidget = {
         id: Date.now() + Math.random(),
-      
+
         title: tempTitle,
         text: tempText,
         type: "text",
@@ -77,7 +77,7 @@ const Dashboard = ({ searchTerm }) => {
         </div>
       )}
       <div className='top'>
-        <span><h3 className='title'>CNAPP Dashboard</h3></span>
+        <h3 className='title'>CNAPP Dashboard</h3>
         <div className="actions">
           <button onClick={() => setShowWidgetPanel(true)}> Add Widget +</button>
           <button><FaSyncAlt /></button>
@@ -97,7 +97,7 @@ const Dashboard = ({ searchTerm }) => {
 
           <div className="legend1">
             <div><span className="box connected"></span>Connected (2)</div>
-            <div><span className="box not-connected"></span>Not Connected (2)</div>
+            <div><span className="box not-connected"></span>Not Connected(2)</div>
           </div>
         </div>
 
@@ -125,17 +125,15 @@ const Dashboard = ({ searchTerm }) => {
       <div className='cards-container'>
         <div className='cards'><h5 >Top 5 Namespace Specific Alerts</h5>
           <div className='barchart'>
-            <div style={{paddingTop:'60px'}}><MdBarChart /></div>
-            <p style={{paddingRight:'50px' }}>No Graph data available</p>
+            <div style={{ marginTop: '60px' }}><MdBarChart /></div>
+            <p style={{ paddingRight: '50px' }}>No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5>Weekload Alerts</h5>
           <div className='barchart'>
-            <div style={{paddingTop:'60px'}}>
-              <MdBarChart />
-
-            </div>
-            <p style={{ paddingRight :'50px' }}>No Graph data available</p>
+            <div style={{ marginTop: '60px' }}><MdBarChart /></div>
+   {/* white-space: nowrap; */}
+            <p style={{ paddingRight: '50px',whiteSpace:'nowrap' }}>No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
@@ -146,23 +144,26 @@ const Dashboard = ({ searchTerm }) => {
         <div className='cards'><h5>Image Risk Assessment</h5>
           <div className="risk-bar">
             <p><strong>1470</strong> Total vulnerabilities</p>
-            <div className="bar" style={{ width: '300px' }}>
+            <div className="bar">
               <div className="brown1" ></div>
               <div className="red1" ></div>
               <div className="orange1" ></div>
               <div className="yellow1" ></div>
-              <div className="grey1"></div>
+              <div className="grey1" ></div>
             </div>
             <div className='legend3'>
-              <div><span className="box critical"></span>Critical(9)</div>
-              <div><span className="box high"></span>High(50)</div>
+              <span><span className="box critical"></span> Critical(9)</span>
+              <span><span className="box high"></span> High(150)</span>
+              <span><span className="box medium"></span> Medium</span>
+              <span><span className="box low"></span> Low</span>
+              <span><span className="box none"></span> None</span>
             </div>
           </div>
         </div>
         <div className='cards'><h5>Image Security Issues</h5>
           <div className="risk-bar">
             <p><strong>2</strong> Total Images</p>
-            <div className="bar" style={{ width: '300px' }}>
+            <div className="bar" >
               <div className="brown2" ></div>
               <div className="red2" ></div>
               <div className="orange2" ></div>
@@ -170,17 +171,17 @@ const Dashboard = ({ searchTerm }) => {
               <div className="grey2"  ></div>
             </div>
             <div className='legend3'>
-              <div><span className="box critical"></span>Critical(2)</div>
-              <div><span className="box high"></span>High(2)</div>
+              <span><span className="box critical"></span>Critical(2)</span>
+              <span><span className="box high"></span>High(2)</span>
+              <span><span className="box medium"></span> Medium</span>
+              <span><span className="box low"></span> Low</span>
+              <span><span className="box none"></span> None</span>
             </div>
           </div>
-
         </div>
         <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
           + Add Widget</button></h5>
-
         </div>
-
       </div>
 
 
@@ -199,20 +200,20 @@ const Dashboard = ({ searchTerm }) => {
         ))}
       </div>
 
-
       {showWidgetPanel && (
         <aside className="widget-panel">
-
-
-          <div className="widget-panel-header" >
-            <h4 style={{ padding: '10px' }}>Add Widget</h4>
-            <button className="close-btn" onClick={() => setShowWidgetPanel(false)}
-            >✕</button>
+          {/* Header */}
+          <div className="widget-panel-header">
+            <h4>Add Widget</h4>
+            <button className="close-btn" onClick={() => setShowWidgetPanel(false)}>
+              ✕
+            </button>
           </div>
 
-          <p style={{ paddingLeft: '10px' }}>Personalise your dashboard by adding the following widget</p>
+          <p className="panel-description" style={{ paddingLeft: '10px' }}>
+            Personalise your dashboard by adding the following widget
+          </p>
 
-        
           <div className="tabs" style={{ paddingLeft: '15px' }}>
             {["CSPM", "CWPP", "Image", "Ticket"].map((tab) => (
               <button
@@ -224,55 +225,36 @@ const Dashboard = ({ searchTerm }) => {
               </button>
             ))}
           </div>
-        
-          <div className="widget-options" >
 
-            {Object.keys(dashboardData).map((category) => {
-              const widgetsInCategory = dashboardData[category].filter((w) =>
-                w.title.toLowerCase().includes(searchTerm.toLowerCase())
-              );
-
-              return (
-                widgetsInCategory.length > 0 && (
-                  <div key={category}>
-                    <h5>{category}</h5>
-                    {widgetsInCategory.map((w) => (
-                      <label
-                        key={w.title}
-                        style={{ border: "2px solid gray", padding: "5px", display: "block", marginBottom: "5px" }}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedWidgets.includes(w.title)}
-                          onChange={() => handleCheckboxChange(w.title)}
-                        />
-                        {w.title}
-                      </label>
-                    ))}
-                  </div>
-                )
-              );
-            })}
-          </div>
           <div className="widget-options">
-            <h4>Add New Widget</h4>
-            <input
-              type="text"
-              placeholder="Widget Name"
-              value={tempTitle}
-              onChange={(e) => setTempTitle(e.target.value)}
-              style={{ marginBottom: '10px', width: '95%', padding: '5px' }}
-            />
-            <textarea
-              placeholder="Widget Text"
-              value={tempText}
-              onChange={(e) => setTempText(e.target.value)}
-              style={{ marginBottom: '10px', width: '95%', padding: '5px' }}
-            />
+            {dashboardData[activeTab].map((w) => (
+              <label key={w.title} className="widget-checkbox"
+                style={{ border: "2px solid gray", padding: "5px", display: "block", marginBottom: "5px" }}
+
+              >
+                <input
+                  type="checkbox"
+                  checked={selectedWidgets.includes(w.title)}
+                  onChange={() => handleCheckboxChange(w.title)}
+
+                />
+                {w.title}
+              </label>
+            ))}
           </div>
+
+          {/* Footer */}
           <div className="panel-actions">
-            <button onClick={() => setShowWidgetPanel(false)} style={{ padding: '10px', width: '100px', borderRadius: '15px' }}>Cancel</button>
-            <button onClick={handleConfirm} style={{ padding: '10px', width: '100px', borderRadius: '15px' }}>Confirm</button>
+            <button className="cancel-btn" onClick={() => setShowWidgetPanel(false)}
+              style={{ padding: '10px', width: '100px', borderRadius: '15px' }}
+            >
+              Cancel
+            </button>
+            <button className="confirm-btn" onClick={handleConfirm}
+              style={{ padding: '10px', width: '100px', borderRadius: '15px' }}
+            >
+              Confirm
+            </button>
           </div>
         </aside>
       )}

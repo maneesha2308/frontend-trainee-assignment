@@ -9,6 +9,7 @@
   height: 25vh;
   display: flex;
   background-color: white;
+  margin:0 auto;
 }
 
 .widget-header {
