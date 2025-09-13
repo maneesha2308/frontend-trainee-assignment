@@ -24,7 +24,9 @@ const Navbar = ({searchTerm,setSearchTerm}) => {
           onChange={handleSearch}
         />
       </div>
-      <div style={{display:'flex',gap:'30px'}}>
+      <div 
+      style={{display:'flex',gap:'30px'}}
+      >
       <FaAngleDown />
       <FaRegBell/>
 

@@ -109,7 +109,6 @@ const Dashboard = ({ searchTerm }) => {
               <p>Total</p>
             </div>
           </div>
-
           <div className="legend2">
             <div><span className="box failed"></span>Failed</div>
             <div><span className="box warning"></span>Warning</div>
@@ -125,15 +124,14 @@ const Dashboard = ({ searchTerm }) => {
       <div className='cards-container'>
         <div className='cards'><h5 >Top 5 Namespace Specific Alerts</h5>
           <div className='barchart'>
-            <div style={{ marginTop: '60px' }}><MdBarChart /></div>
-            <p style={{ paddingRight: '50px' }}>No Graph data available</p>
+            <div style={{textAlign:'center'}}><MdBarChart /></div>
+            <p>No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5>Weekload Alerts</h5>
           <div className='barchart'>
-            <div style={{ marginTop: '60px' }}><MdBarChart /></div>
-   {/* white-space: nowrap; */}
-            <p style={{ paddingRight: '50px',whiteSpace:'nowrap' }}>No Graph data available</p>
+            <div style={{textAlign:'center'}}><MdBarChart /></div>
+            <p >No Graph data available</p>
           </div>
         </div>
         <div className='cards'><h5><button onClick={() => setShowWidgetPanel(true)}>
@@ -163,7 +161,7 @@ const Dashboard = ({ searchTerm }) => {
         <div className='cards'><h5>Image Security Issues</h5>
           <div className="risk-bar">
             <p><strong>2</strong> Total Images</p>
-            <div className="bar" >
+            <div className="bar">
               <div className="brown2" ></div>
               <div className="red2" ></div>
               <div className="orange2" ></div>
